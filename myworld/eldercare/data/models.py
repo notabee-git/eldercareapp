@@ -2,11 +2,11 @@ from django.db import models
 
 class vehicle(models.Model):
   centre = models.CharField(max_length=255)
-  driverid = models.IntegerField() # trip id
-  drivername = models.CharField(max_length=255, null=True) #missing in input data so keeping NULL
-  vehicleno = models.IntegerField() #seq id
-  vehicleid = models.CharField(max_length=255) #vehicle plate
+  tripid = models.IntegerField() # TRIP_ID
+  seqid = models.IntegerField() #SEQ_ID
+  vehicleplate = models.CharField(max_length=255) #Vehicle Plate
   vehicletype = models.CharField(max_length=255)
+  vehicleid = models.IntegerField()
   vehiclecapacity = models.IntegerField()
   maxwheelchairelder = models.IntegerField()
   maxambulantelder = models.IntegerField()
@@ -15,13 +15,14 @@ class vehicle(models.Model):
 class centre(models.Model):
   centre = models.CharField(max_length=255)
   centreid = models.IntegerField()
-  clusterid = models.IntegerField()
+  cluster = models.CharField(max_length=255)
   centrepostalcode = models.IntegerField()
     
 
 class elder(models.Model):
   elder = models.IntegerField()
   eldergender = models.CharField(max_length=255)
+  elderid = models.IntegerField()
   nricorfin = models.CharField(max_length=255)
   postalcode1 = models.IntegerField()
   postalcode2 = models.CharField(max_length=255)
@@ -34,11 +35,11 @@ class elder(models.Model):
   elderservicetype = models.CharField(max_length=255)
   caregiver = models.IntegerField()
   loadingtime = models.IntegerField()
-  rowid = models.IntegerField(null=True) #extra info added so keeping them NULL
-  fromtopostal = models.IntegerField(null=True) # null
-  distancekm = models.IntegerField(null=True) #null
-  minn = models.IntegerField(null=True) #null
-  min = models.IntegerField(null=True) #null
+  rowid = models.IntegerField(null=True) # row_id : (extra info added so keeping them NULL)
+  fromtopostal = models.IntegerField(null=True) #  FromToPostal : null
+  distancekm = models.IntegerField(null=True) # distance_km null
+  minn = models.IntegerField(null=True) # min_n : null
+  min = models.IntegerField(null=True) # min (+svc time): null
 
 
 

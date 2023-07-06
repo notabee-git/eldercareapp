@@ -23,6 +23,18 @@ def dataentry(request):
     template = loader.get_template('dataentry.html')
     return HttpResponse(template.render())
 
+def elderinfo(request):
+    template = loader.get_template('elderinfo.html')
+    return HttpResponse(template.render())
+
+def vehicleinfo(request):
+    template = loader.get_template('vehicleinfo.html')
+    return HttpResponse(template.render())
+
+def centreinfo(request):
+    template = loader.get_template('centreinfo.html')
+    return HttpResponse(template.render())
+
 def process_file(request):
     if request.method == 'POST' and 'xlsx_file' in request.FILES:
         xlsx_file = request.FILES['xlsx_file']

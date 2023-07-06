@@ -8,4 +8,7 @@ urlpatterns = [
     path('dataexport/', views.dataexport, name='dataexport'),
     path('dataentry/', views.dataentry, name='dataentry'),
     path('process_file/', views.process_file, name='process_file'),
+    path('elderinfo/', views.elderinfo, name='elderinfo'),
+    path('vehicleinfo/', views.vehicleinfo, name='vehicleinfo'),
+    path('centreinfo/', views.centreinfo, name='centreinfo'),
 ]
